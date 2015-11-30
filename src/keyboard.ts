@@ -18,7 +18,7 @@ export default class KeyboardLayout {
 		
 		switch (layout) {
 			case 'es-ES':
-				return new KeyboardLayout(new KeyMapper_es_ES());
+				return new KeyboardLayout(new KeyMapperEsEs());
 				
 			default:
 				return new KeyboardLayout();
@@ -31,7 +31,7 @@ interface KeyMapper {
 	resolve(key : string) : string;
 }
 
-class KeyMapper_es_ES implements KeyMapper {
+class KeyMapperEsEs implements KeyMapper {
 	
 	private mappings = {};
 	
@@ -41,7 +41,7 @@ class KeyMapper_es_ES implements KeyMapper {
 			'\\': '<', // doesn't really work; in my keyboard there are two keys for \ in US
 			';': 'ñ',
 			"'": "´"
-		}
+		};
 	}
 	
 	get name() : string {
